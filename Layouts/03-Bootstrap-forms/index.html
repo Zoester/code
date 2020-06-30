@@ -15,10 +15,46 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+
   <body>
 
     <!-- Your responsive signup form -->
-
+  <div class="container py-3">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4">
+        <form action="#">
+          <h2 class="text-center mb-5">Create Your Account</h2>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="First Name"> Your First Name </label>
+                <input class="form-control" type="text" id="first-name" placeholder="Zoey">
+            </div>
+            <div class="form-group col-6">
+              <label for="Last Name"> Your Last Name </label>
+                <input class="form-control" type="text" id="last-name" placeholder="Erdenebileg">
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="Email"> Your Email </label>
+                <input class="form-control" type="email" id="email" placeholder="zolzayae@gmail.com">
+          </div>
+          <div class="form-group">
+              <label for="password"> Your Password </label>
+                <input class="form-control" type="text" id="password" placeholder="password">
+          </div>
+          <div class="form-group">
+              <label for="referrer">How do you know us?</label>
+                <select id="referrer" class="form-control">
+                  <option value>Facebook</option>
+                  <option value>Google Search</option>
+                  <option value>Friend Referral</option>
+                </select>
+          </div>
+          <input type="submit" value="Sign Up" class="btn btn-primary btn-lg w-100">
+         </form>
+      </div>
+    </div>
+  </div>
 
     <!-- Including Bootstrap JS (with its Popper.js / jQuery dependency) so that dynamic components work -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

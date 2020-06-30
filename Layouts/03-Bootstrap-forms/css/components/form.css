@@ -1,1 +1,16 @@
 /* Your form design */
+.container {
+  background-color: #FFB7C3;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #D3FAC7
+}
+
+.container h2 {
+  color: white;
+  font-weight: bold;
+}
+
+.container label {
+  color:white;
+}
+
