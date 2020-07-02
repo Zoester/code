@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Poppins:300,400,500,700");
+
+
+body {
+  background-color: #F7F7F7;
+  color: #4E4E4E;
+  font-family: 'Roboto', 'Open Sans'
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+a {
+  font-family: 'Roboto', 'Open Sans'
+  font-size: 16px;
+  text-decoration: none;
+  color: #0197F6;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #D7263D;
+  text-decoration: underline;
+}
+
+h2 {
+  color:#5F4BB6;
+}
+
