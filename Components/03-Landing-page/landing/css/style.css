@@ -20,3 +20,130 @@ a {
 
 /* Custom design below! */
 
+/* Banner */
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 230px 0;
+}
+
+
+.container-1 {
+  display: block;
+  width: 900px
+  margin:auto;
+  padding-left: 200px;
+}
+
+.container-1 h1 {
+  color:white;
+  font-size: bold;
+  display: block;
+}
+
+.container-1 p {
+  color: #CDCCCC;
+  font-size: bold;
+  padding-bottom: 20px;
+}
+
+.btn-primary {
+  background: #59D80C;
+  color: white;
+  font-size: bold;
+  border-radius: 10px;
+  padding: 10px 24px;
+}
+
+.btn-primary:hover {
+  background: #1BCB7F;
+  color:white;
+}
+
+
+/* How it Works Section */
+
+.container-2 {
+  width: 900px;
+  margin:auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.card {
+  width: 200px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #CDCCCC;
+  text-align: center;
+  padding: 20px;
+  border:1px solid #CDCCCC;
+  margin:;
+}
+
+.card img {
+  height: 100px;
+}
+
+.card h4 {
+  color:black;
+  display: block;
+  font-weight: bold;
+}
+
+.card p {
+  opacity: 0.5;
+}
+
+/* Footer */
+
+.footer {
+  background: #333432;
+  text-align: center;
+  padding:60px;
+}
+
+.footer-links {
+  display: block;
+  padding-bottom: 26px;
+}
+
+.footer-links a {
+  font-size:26px;
+  color:#1BCB7F;
+  width: 1.2em;
+  display: inline-block;
+}
+
+.footer-copyright {
+  color: #CDCCCC;
+}
+
+.footer .fa-heart {
+  color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
