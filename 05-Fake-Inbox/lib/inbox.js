@@ -40,7 +40,11 @@ const refresh = () => {
   //       append it to the DOM. Update the unread counter in title as well.
   let counter = document.querySelector('#count')
   if (hasNewMessage()) {
-    counterInt = parseInt(counter.innerText[1])
+    // what is counterstring?
+    // why use the brackets?
+    // what happens when greater than 9?
+    const counterString = counter.innerText[1]
+    let counterInt = parseInt(counterString)
     counterInt += 1
     counter.innerText = `(${counterInt})`
     appendMessageToDom(newMessage())
