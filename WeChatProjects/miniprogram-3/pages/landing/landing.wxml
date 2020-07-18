@@ -1,0 +1,16 @@
+<!--pages/landing/landing.wxml-->
+<view class="banner" style="padding-top:20px;height:100vh;background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/pages/images/Achilles.jpg);">
+  <view class="container verticalflex">
+    <view class="h1 h1-verticalflex">{{title}}</view>
+      <view class="p">{{description}}</view>
+    <button class="btn btn-flat" url="#" bindtap="goToStoriesPage">
+    {{cta}}
+    </button>
+   
+
+
+  
+  </view>
+</view>
+
+

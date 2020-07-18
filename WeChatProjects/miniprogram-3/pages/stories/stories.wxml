@@ -1,0 +1,36 @@
+<!--pages/stories/stories.wxml-->
+<view class="banner" style="padding-top:20px;height:100vh;background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/pages/images/Achilles.jpg);">
+  <view class="h1">Myth Lusters</view>
+  <view class="p">And the myth begins</view>
+</view>
+
+<!--Myth Cards-->
+<view class="card-product">
+<view class="card-product-infos">
+    <view class="h2">{{text}}</view>
+    <view class="p">{{name}}</view>
+</view>
+</view>
+
+<view class="card-product">
+<view class="card-product-infos">
+    <view class="h2">{{content}}</view>
+    <view class="p">{{name}}</view>
+</view>
+</view>
+
+<view class="card-product">
+<view class="card-product-infos">
+    <view class="h2">{{content}}</view>
+    <view class="p">{{name}}</view>
+</view>
+</view>
+
+<view class="card-product">
+<view class="card-product-infos">
+    <view class="h2">{{content}}</view>
+    <view class="p">{{name}}</view>
+</view>
+</view>
+
+<button bindtap="clickMe">{{text}}</button>
