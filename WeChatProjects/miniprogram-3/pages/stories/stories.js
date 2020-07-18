@@ -5,8 +5,12 @@ Page({
    * Page initial data
    */
   data: {
-    text: 'Who is here?'
-
+    stories: [
+      {content:"Building a mp is fun", name: "Zoey"},
+      {content:"Sad life", name: "Peter"},
+      {content:"Fun life", name: "Luke"},
+      {content:"Temp life", name: "Zeppi"}
+    ]
   },
 
   clickMe: function () {

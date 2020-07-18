@@ -5,32 +5,16 @@
 </view>
 
 <!--Myth Cards-->
-<view class="card-product">
-<view class="card-product-infos">
-    <view class="h2">{{text}}</view>
-    <view class="p">{{name}}</view>
-</view>
-</view>
+<view class="card-product" wx:if="{{!stories || !stories.length}}">There's Nothing Here Yet!</view>
+<view wx:else>
 
-<view class="card-product">
-<view class="card-product-infos">
-    <view class="h2">{{content}}</view>
-    <view class="p">{{name}}</view>
-</view>
-</view>
+  <view wx:for="{{stories}}" class="card-product">
+    <view class="card-product-infos">
+        <view class="h2">{{item.content}}</view>
+        <view class="p">{{item.name}}</view>
+    </view>
+  </view>
 
-<view class="card-product">
-<view class="card-product-infos">
-    <view class="h2">{{content}}</view>
-    <view class="p">{{name}}</view>
-</view>
-</view>
+  <button bindtap="clickMe">{{text}}</button>
 
-<view class="card-product">
-<view class="card-product-infos">
-    <view class="h2">{{content}}</view>
-    <view class="p">{{name}}</view>
 </view>
-</view>
-
-<button bindtap="clickMe">{{text}}</button>
