@@ -1,41 +1,26 @@
-// pages/post/post.js
-
-let app = getApp()
-
+// pages/landing/landing.js
 Page({
-
-formSubmit: function (event) {
-  console.log(event.detail.value.name)
-  console.log(event.detail.value.content)
-
-  let name = event.detail.value.name 
-  let content = event.detail.value.content
-
-  app.globalData.stories.unshift({content,name})
-
-//STORING IN GLOBAL DATA 
-
-let stories = wx.getStorageSync("stories") || [] 
-stories.unshift({content,name})
-wx.setStorageSync('stories', stories)
-wx.switchTab({
-  url: '/pages/stories/stories',
-})
-},
 
   /**
    * Page initial data
    */
   data: {
+    title: "今日头条 - Toutiao.com",
+    description: "信息创造价值",
+    cta: "来看新闻"
+  },
 
+  goToStories: function() {
+    wx.navigateTo({
+      url: '/pages/stories/stories'
+    })
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    console.log(app.globalData.stories)
-    this.setData({stories:app.globalData.stories})
+
   },
 
   /**
