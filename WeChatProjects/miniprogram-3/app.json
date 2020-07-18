@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/landing/landing",
-    "pages/stories/stories"
+    "pages/stories/stories",
+    "pages/post/post"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -11,6 +12,15 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
+"tabBar": {
+  "list": [{
+    "pagePath": "pages/stories/stories",
+    "text": "Stories"
+  }, {
+    "pagePath": "pages/post/post",
+    "text": "Post"
+  }]
+},
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

@@ -33,7 +33,13 @@ App({
       }
     })
   },
+
   globalData: {
-    userInfo: null
+    stories: [
+      { content: "Building an mp is fun", name: "Zoey" },
+      { content: "Building an mp is fun", name: "Zoey" },
+      { content: "Building an mp is fun", name: "Zoey" },
+      { content: "Building an mp is fun", name: "Zoey" }
+    ]
   }
 })

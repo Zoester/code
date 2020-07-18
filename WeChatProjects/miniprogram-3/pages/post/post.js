@@ -1,31 +1,50 @@
-// pages/stories/stories.js
+// pages/post/post.js
+
 let app = getApp()
 
 Page({
 
+formSubmit: function (event) {
+  console.log(event.detail.value.name)
+  console.log(event.detail.value.content)
+
+  let name = event.detail.value.name 
+  let content = event.detail.value.content
+
+  app.globalData.stories.unshift({content,name})
+
+
+
+
+//STORING IN GLOBAL DATA 
+
+let stories = wx.getStorageSync("stories") || [] 
+stories.unshift({content,name})
+wx.setStorageSync('stories', stories)
+wx.switchTab({
+  url: '/pages/stories/stories',
+})
+},
+
   /**
    * Page initial data
    */
-  data: {stories: app.globalData.stories},
-
-  clickMe: function () {
-      this.setData ({text: "Hello World!"})
+  data: {
+    
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    console.log(app.globalData.stories)
+    this.setData({stories:app.globalData.stories})
   },
 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-    this.setData({
-      stories: app.globalData.stories
-    })
 
   },
 
@@ -33,9 +52,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    this.setData({
-      stories: app.globalData.stories
-    })
+
   },
 
   /**
