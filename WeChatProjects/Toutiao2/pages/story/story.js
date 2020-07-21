@@ -10,10 +10,9 @@ Page({
     //Story is object so we use curlies {}
     story: {},
     comments: [],
-
-   // "votes": {
-     // "$incr_by": -1
-    //}
+    "votes": {
+      "$incr_by": -1
+    }
   },
 
 //for my stories
@@ -35,30 +34,30 @@ Page({
    */
 
   onLoad: function (options) {
-    let page = this; 
-    let id = options.id
-      const request = {
-        url: `https://cloud.minapp.com/oserve/v1/table/84988/record/${id}`,
-        method: 'GET',
-        header: { 'Authorization': 'Bearer 7a82a2b76c38e309ae34ff3c83c87f8409748b0e'},
-        success: page.getRequestData
-      }
-    wx.request(request);
+    console.log(options);
+    const id = options.id;
+    const story = new wx.BaaS.TableObject('stories');
+    const comments = new wx.BaaS.TableObject('comments');
 
-      const request2 = {
-        url: 'https://cloud.minapp.com/oserve/v1/table/85188/record/',
-        method: 'GET',
-        header: { 'Authorization': 'Bearer 7a82a2b76c38e309ae34ff3c83c87f8409748b0e' },
-        
-        data: {
-          where: { // filtering comments for a specific story
-            "story_id": { "$eq": id } // story id
-          }
-        },
-        success: page.getRequestData2
-      }
-    wx.request(request2);
-    },
+    story.get(id).then((res) => {
+      console.log(res);
+      this.setData ({
+      story: res.data
+      })
+    });
+
+    let query = new wx.BaaS.Query ();
+
+    query.compare('story_id','=',id);
+
+    comments.setQuery (query).find().then((res) => {
+      console.log(res);
+      this.setData ({
+      comments: res.data.objects
+      })
+
+    })
+  },
 
     //binded to delete btn
   deleteComment(event) {

@@ -1,10 +1,8 @@
 <!--pages/story/story.wxml-->
-<view class="card-product">
-  <view class="card-product-infos">
-    <view class="h2">{{story.content}}</view>
-    <view class="p">{{story.name}}</view>
-  </view>
-</view>
+<view class="h2">{{story.content}}</view>
+<view class="p">{{story.name}}</view>
+<view class="comments-heading">{{comments.text}}</view>
+
 
 <!-- Add an if statement outside of the "for" loop. If the "for" loop returns no comments, the line of code won't appear and so the if statement won't apply.-->
 <!-- comments.length is useful for if statements-->
@@ -16,10 +14,11 @@
     <view class="btn-flat btn-vote" data-id="{{comment.id}}" data-votes="{{comment.votes}}" bindtap="voteComment"> votes: {{comment.votes}}></view>
   </view>
 </view>
+<view style = "font-style: italic" class="p" wx:else > No Comments Thus Far> </view>
+
 
 <!-- wx:else statement applies only if there are no comments to show -->
 
-<view style = "font-style: italic" class="p" wx:else > No Comments Thus Far></view>
 
 
 

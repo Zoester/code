@@ -1,8 +1,8 @@
 //index.js
 //获取应用实例
+const app = getApp()
 
 Page({
-
   data: {
     stories: [],
   },
@@ -28,15 +28,21 @@ Page({
     });
   },
   onLoad: function () {
-    let page=this;
-      const request = {
-        url: `https://cloud.minapp.com/oserve/v1/table/84988/record/`, 
-        method: 'GET',
-        header: {'Authorization':'Bearer 7a82a2b76c38e309ae34ff3c83c87f8409748b0e'}, // API token from Above
-        success: page.getRequestData
-      }
-      wx.request(request);
-    },
+    const stories = new wx.BaaS.TableObject ('stories');
+    stories.find().then((res) => {
+      console.log('res', res),
+      this.setData ({
+        stories: res.data.objects
+      })
+    })
+  },
+
+  toStories: function (e) {
+    console.log(e); 
+    const id=e.currentTarget.dataset.id;
+    wx.navigateTo ({
+      url:'story?id=' +id,
+    })
+  },
     
-  
-  })
+})

@@ -1,13 +1,14 @@
 /* pages/story/story.wxss */
 
 page {
-  background-color: black;
+  background-color: white;
 }
 
 .comments-heading {
   margin: 5px;
-  font-size: 12px;
+  font-size: 20px;
   font-style: normal;
+  color: pink;
 }
 
 .comment-box {
