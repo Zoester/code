@@ -3,11 +3,10 @@
     <view class="h1">今日头条</view>
     <view class="p">信息创造价值</view>
 </view>
-<!-- FMC STORY -->
+<!-- STORY -->
 <view wx:for="{{stories}}" class="card-product">
-  <view class="card-product-infos">
+  <view class="card-product-infos" bindtap="showStory" data-id="{{item.id}}">
     <view class="h2">{{item.content}}</view>
     <view class="p">{{item.name}}</view>
-    <view data-id="{{item.id}}" bindtap="showStory"> Story {{index + 1}} </view>
   </view>
 </view>

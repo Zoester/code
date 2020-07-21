@@ -1,1 +1,39 @@
 /* pages/story/story.wxss */
+
+page {
+  background-color: black;
+}
+
+.comments-heading {
+  margin: 5px;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.comment-box {
+  overflow: hidden; 
+  height: 80px;
+  background: white;
+  box-shadow: 00 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  margin: 5px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}

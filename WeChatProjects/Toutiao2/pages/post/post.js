@@ -1,38 +1,33 @@
 // pages/post/post.js
 let app = getApp()
+
 Page({
 
-  /**
-   * Page initial data
-   */
-  data: {
-
-  },
-
-
   formSubmit: function (event) {
-    // DID WE GET IT?
-    console.log(event.detail.value.name)
-    console.log(event.detail.value.content)
+    // New Story Submit
+    let name = event.detail.value.name;
+    let content = event.detail.value.content;
 
-    let name = event.detail.value.name
-    let content = event.detail.value.content
-    debugger;
     let story = {
       name: name,
       text: content
     }
-    const request = {
-      url: `https://fml.shanghaiwogeng.com/api/v1/stories`,
+
+    //Post data to API
+    wx.request ({
+      url: `https://cloud.minapp.com/oserve/v1/table/84988/record/`,
       method: 'POST',
-      data: story,
-      success() {
-        wx.navigateTo({
-          url: '/pages/index/index'
-        }); 
-        }
+      header: {'Authorization': 'Bearer 7a82a2b76c38e309ae34ff3c83c87f8409748b0e'}, //API Key
+
+      data: story, 
+      success () { 
+        // no need for response data
+        // reload index page when done
+        wx.reLaunch ({
+          url: '/pages/index/index',
+        })
       }
-      wx.request(request);
+    });
   },
 
   /**

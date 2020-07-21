@@ -6,21 +6,21 @@
   </view>
 </view>
 
-<view wx:for="{{comments}}" wx:for-item="comment" class="card-product">
-  <view class="card-product-infos">
-    <view class="h2">{{comment.content}}</view>
-    <view class="p">{{comment.name}}</view>
-  </view>
+<!-- Add an if statement outside of the "for" loop. If the "for" loop returns no comments, the line of code won't appear and so the if statement won't apply.-->
+<!-- comments.length is useful for if statements-->
 
-  <view> {{comment.content}}
-    <view class="btn btn-flat" data-id="{{comment.id}}" bindtap="deleteComment" > Delete Comment</view>
+<view wx:if="{{comments.length > 0}}">
+  <view wx:for="{{comments}}" wx:for-item="comment" class="comment-box">
+    <view class="p">{{comment.content}}</view>
+    <view class="btn-flat" data-id="{{comment.id}}" bindtap="deleteComment">Delete</view>
+    <view class="btn-flat btn-vote" data-id="{{comment.id}}" data-votes="{{comment.votes}}" bindtap="voteComment"> votes: {{comment.votes}}></view>
   </view>
-
-  <view> {{comment.content}}
-    <view class="btn btn-flat" data-id="{{comment.id}}" data-votes="{{comment.votes}}" bindtap="voteComment" > votes: {{comment.votes}} </view>
-  </view>
-
 </view>
+
+<!-- wx:else statement applies only if there are no comments to show -->
+
+<view style = "font-style: italic" class="p" wx:else > No Comments Thus Far></view>
+
 
 
 
